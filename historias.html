@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="icon/ufrrj-logo-1.ico" type="image/x-icon">
+    <title>Histórias - ICE</title>
+
+        <style>
+
+        /* Estilos Gerais */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            line-height: 1.6;
+        }
+        /* Barra de Navegação */
+        .nav-bar {
+            background-color: #005a9c;
+            display: flex;
+            justify-content: start;
+            align-items: baseline;
+            padding: 20px;
+        }
+        .nav-bar ul {
+            list-style: none;
+            display: flex;
+        }
+        .nav-bar li {
+            position: relative;
+        }
+        .nav-bar a {
+            color: white;
+            justify-content:center;
+            text-decoration: none;
+            font-size: 16px;
+            margin: 0 15px;
+        }
+        .nav-bar a:hover {
+            color: #68b6ff;
+        }
+       /*Submenu*/
+       .submenu {
+            display: none; 
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #005a9c;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 10;
+        }
+        .submenu li {
+            display: none;
+            width: 200px;
+            
+        }
+        .submenu a {
+            padding: 10px;
+            justify-content: center;
+            text-decoration: none;
+            color: white;
+        }
+
+        .submenu a:hover {
+            background-color: #004080;
+        }
+
+        /* Mostrar submenu ao passar o mouse */
+        .nav-bar li:hover > .submenu li {
+            display: block; 
+        }
+
+        .nav-bar li:hover > .submenu {
+            display: block; 
+        }
+
+
+        /* Título principal com barra de pesquisa */
+        main {
+            display: flex;
+      flex-direction: column;
+      align-items: start;
+             }
+
+        .header {
+            text-align: left;
+            padding: 40px;
+            background-color: #ececec;
+            color: #0074e0;
+            font-size: 40px;
+            margin-bottom: 5px;
+        }
+
+        .header :hover {
+            color:#353535
+        }
+
+        .search-bar {
+            display: flex;
+            align-items: center;
+            margin-left: auto;
+            background-color: #bbbbbb;
+        }
+
+        .search-bar input {
+            padding: 8px;
+            background-color: #bbbbbb;
+            font-size: 16px;
+            border: none;
+            width: 300px;
+            margin-left: 10px;
+        }
+
+        .search-bar button {
+            padding: 10px 15px;
+            background-color: #bbbbbb;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left: 5px;
+        }
+
+        .search-bar button:hover {
+            background-color: #005a9c;
+        }
+
+        footer {
+    background-color: #005a9c;
+    color: #fff;
+    padding: 20px 0;
+    width: 100%;
+    margin: 0;
+  }
+
+  .footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .contact-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+  }
+
+  .fale-conosco,
+  .endereco {
+    flex: 1;
+    padding: 0 20px;
+  }
+
+  .fale-conosco h2,
+  .endereco h2 {
+    font-size: 22px;
+    margin-top: 0;
+  }
+
+  .fale-conosco p,
+  .endereco p {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+
+  .credits {
+    font-size: 16px;
+    text-align: left;
+  }
+
+  .content h2 {
+            color: #005f99;
+            font-size: 40px;
+            margin-left: 5%;
+        }
+
+        .content h3 {
+            color: #333;
+            font-size: 30px;
+            margin-left: 10%;
+            margin-right: 10%;
+        }
+        .content h4 {
+            color: #333;
+            font-size: 30px;
+            margin-left: 10%;
+            margin-right: 10%;
+            margin-bottom: 20px;
+        }
+
+        .content p {
+            margin-top: 20px;
+            margin-bottom: 20;
+            margin-left: 10%;
+            margin-right: 20%;
+
+        }
+
+        </style>
+
+    </head>
+
+    <body>
+
+        <!-- Barra de Navegação -->
+    <nav class="nav-bar">
+        <ul>
+            <li><a href="pagina_inicial.html">Home</a></li>
+            <li>
+                <a href="#">Instituto ▼</a>
+                <ul class="submenu">
+                    <li><a href="historias.html">História</a></li>
+                    <li><a href="https://institutos.ufrrj.br/ice/instituto/estrutura/">Estrutura</a></li>
+                    <li><a href="https://institutos.ufrrj.br/ice/instituto/administracao/">Administração</a></li>
+                    <li><a href="https://institutos.ufrrj.br/ice/instituto/localizacao/">Localização</a></li>
+                    <li><a href="https://institutos.ufrrj.br/ice/instituto/ice-em-fotos/">ICE em Fotos</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Graduação ▼</a>
+                <ul class="submenu">
+                    <li><a href="https://institutos.ufrrj.br/ice/departamentos/defis/grade-curricular/">Fisica</a></li>
+                    <li><a href="https://institutos.ufrrj.br/ice/departamentos/demat/grade-curricular/">Matemática</a></li>
+                    <li><a href="https://institutos.ufrrj.br/ice/departamentos/dequim/curso/">Sistemas de Informação</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Pós-Graduação ▼</a>
+                    <ul class="submenu">
+                        <li><a href="https://institutos.ufrrj.br/ice/ppgq/">PPGQ</a></li>
+                        <li><a href="https://institutos.ufrrj.br/ice/ppgmmc-2/">PPGMMC</a></li>
+                        <li><a href="https://institutos.ufrrj.br/ice/profmat/">PROFMAT</a></li>
+                        <li><a href="https://institutos.ufrrj.br/ice/profqui/">PROFQUI</a></li>
+                    </ul>
+            </li>
+            <li>
+                <a href="#">Orientação ▼</a>
+                    <ul class="submenu">    
+                        <li><a href="https://institutos.ufrrj.br/ice/deliberacoes/">Deliberações</a></li>
+                        <li><a href="https://institutos.ufrrj.br/ice/estatuto-e-regimento/">Estatuto</a></li>
+                    </ul>
+            </li>
+            <a href="#">Fale Conosco</a>
+        </ul>
+    </nav>
+
+    <main>
+    <!-- Título principal com barra de pesquisa -->
+    <div class="header" div style="display: flex; ; justify-content: left ; width: 100%; background-color: #ececec; height: 159px;">
+        <a href="site2.html">
+        Instituto de Ciências Exatas - ICE </br>
+        Campus Seropédica - UFRRJ </br>
+        </a>
+    </div>
+
+    <div class="search-bar" style="margin-left: 35%;">
+        <input type="text" placeholder="Pesquisar...">
+        <button type="button">🔍︎</button>
+    </div>
+
+    
+        <section class="content">
+            <a href="#"><h2>Instituto</h2></a>
+            <h3><hr>História</h3>
+            <p>
+                Em 11 de agosto de 1970, o Conselho Universitário da 
+                Universidade Federal Rural do Rio de Janeiro (UFRRJ), 
+                CONSU, aprovou a indicação do Professor Roberto Alvahydo e 
+                de outros professores para promoverem a implantação do Instituto 
+                de Matemática, Física e Química da UFRRJ.
+            </p>
+            <p>
+                No entanto, já naquela época, funcionavam de forma independente, 
+                dois departamentos: O Departamento de Física e Química e o 
+                Departamento de Matemática e Estatística. Da mesma forma, já 
+                existia também o Curso de Mestrado em Química Orgânica 
+                (criado em 1966), que começou praticamente com dois docentes: 
+                Otto Richard Gottlieb (coordenador) e W.B. Eyton 
+                (oriundo da Universidade de Sheffield), contando com oito alunos.  
+            </p>
+            <p>
+                Em 22 de junho de 1971, o Professor José Carlos Sena Maia,
+                 através do ofício nº 65 (processo nº 0693/71), solicitou a criação do 
+                 Departamento de Física. Em 08 de dezembro de 1971, o CONSU homologou o 
+                 pedido (resolução 09/71) e, finalmente, em 10 de março foi eleito o primeiro 
+                 Chefe de Departamento de Física, sob a organização do Professor Horácio 
+                 Macedo. De 1972 a 1980, assumiram a direção do antigo Instituto de 
+                 Matemática, Física e Química, os Professores Roberto Alvahydo, 
+                 Horácio Macedo e Jamil Correa Mourão.
+            </p>
+            <p>Com a aprovação do regimento das Unidades Universitárias da UFRRJ 
+                (Deliberação nº 25, de 09/01/1980), o nome do Instituto de Matemática,
+                Física e Química foi alterado para Instituto de Ciências Exatas – 
+                ICE.
+            </p>
+            <p>
+                Em 1994, foi implantado o curso de Doutorado em Química Orgânica.
+                Em janeiro de 2008, a CAPES através do OFÍCIO/CAA/Nº 027- 03/2008,
+                aprovou a alteração do nome do Programa, que passou a ser
+                denominado Programa de Pós-Graduação em Química com três áreas
+                de concentração (Química Orgânica, Físico-Química e Química Agrária)
+                que reflete as linhas e projetos de pesquisa, disciplinas e perfil do corpo docente.
+            </p>
+            <p>
+                Todas essas transformações são marcos históricos de grande importância
+                para a comunidade. Poucos, talvez, poderiam prever o desenvolvimento
+                que o antigo Instituto de Matemática, Física e Química alcançaria nos
+                anos seguintes à sua criação (1970) e, principalmente na virada do milênio,
+                com as interligações dos campos do conhecimento, a utilização de modernas
+                tecnologias no desenvolvimento de pesquisas de fronteira, na forma de
+                manipulação e transmissão de informações técnicas e educacionais utilizadas nos Departamentos.
+            </p>
+            <h4><hr> </h4>
+            
+        </section>
+
+        <footer>
+            <div class="footer-content">
+              <div class="contact-info">
+                <div class="fale-conosco">
+                  <h2>Fale Conosco</h2>
+                  <p>Contato</p>
+                </div>
+                <div class="endereco">
+                  <h2>Endereço</h2>
+                  <p>Universidade Federal Rural do Rio de Janeiro</p>
+                  <p>BR-465, Km 7 Seropédica-Rio de Janeiro</p>
+                  <p>CEP: 23.897-000</p>
+                </div>
+              </div>
+              <div class="credits">
+                © 2011-2024 - UFRRJ | Créditos
+              </div>
+            </div>
+          </footer>
+    </main>
+
+
+    </body>
+
+</html>

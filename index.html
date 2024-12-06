@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="icon/ufrrj-logo-1.ico" type="image/x-icon">
+    <title>Instituto de Ciências Exatas - ICE</title>
+
+    <style>
+        /* Estilos Gerais */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            line-height: 1.6;
+        }
+
+        /* Barra de Navegação */
+        .nav-bar {
+            background-color: #005a9c;
+            display: flex;
+            justify-content: start;
+            align-items: baseline;
+            padding: 20px;
+        }
+
+
+        .nav-bar ul {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-bar li {
+            position: relative;
+        }
+
+        .nav-bar a {
+            color: white;
+            justify-content:center;
+            text-decoration: none;
+            font-size: 16px;
+            margin: 0 15px;
+        }
+
+        .nav-bar a:hover {
+            color: #68b6ff;
+        }
+        
+       /*Submenu*/
+
+       .submenu {
+            display: none; 
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #005a9c;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 10;
+        }
+
+
+        .submenu li {
+            display: none;
+            width: 200px;
+            
+        }
+
+        .submenu a {
+            padding: 10px;
+            justify-content: center;
+            text-decoration: none;
+            color: white;
+        }
+
+        .submenu a:hover {
+            background-color: #004080;
+        }
+
+        /* Mostrar submenu ao passar o mouse */
+        .nav-bar li:hover > .submenu li {
+            display: block; 
+        }
+
+        .nav-bar li:hover > .submenu {
+            display: block; 
+        }
+
+        main {
+            display: flex;
+      flex-direction: column;
+      align-items: start;
+             }
+        /* Título principal com barra de pesquisa */
+        .header {
+            text-align: left;
+            padding: 20px;
+            background-color: #ececec;
+            color: #0074e0;
+            font-size: 24px;
+            margin-bottom: 5px;
+        }
+
+        .header :hover {
+            color:#353535
+        }
+
+        .search-bar {
+            display: flex;
+            align-items: stretch;
+            margin-left: auto;
+            background-color: #bbbbbb;
+        }
+
+        .search-bar input {
+            padding: 10px 15px;
+            background-color: #bbbbbb;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            width: 300px;
+            margin-left: 10px;
+        }
+
+        .search-bar button {
+            padding: 10px 15px;
+            background-color: #bbbbbb;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left: 5px;
+        }
+
+        .search-bar button:hover {
+            background-color: #005a9c;
+        }
+
+         /* Carrossel */
+         .carousel {
+            margin: 20px auto;
+            width: 90%;
+            max-width: 800px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+         }
+
+         .carousel img {
+            width: 100%;
+            display: block;
+        }
+        /* Conteúdo principal */
+        .content {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+
+        .card-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            padding: 15px;
+            flex: 1 1 calc(33.333% - 20px);
+            text-align: center;
+            min-width: 280px;
+        }
+
+        .card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+
+        .card a {
+            display: block;
+            text-decoration: none;
+            color: #353535;
+            font-weight: bold;
+            padding: 10px;
+        }
+
+        .card a:hover {
+            color: #005a9c;
+        }
+
+
+
+         /* Editais */
+         .editais {
+            margin-top: 40px;
+        }
+
+        .editais h3 {
+            font-size: 40px;
+            color: #353535;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+        
+        .editais h3:hover{
+            color: #005a9c; 
+
+        }
+
+        .edital-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .edital-list li {
+            margin-bottom: 10px;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 30px 45px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .edital-list a {
+            text-decoration: none;
+            color: #353535;
+            font-weight: bold;
+        }
+
+        .edital-list a:hover {
+            color: #005a9c;
+        }
+
+        /* Rodapé */
+        footer {
+    background-color: #005a9c;
+    color: #fff;
+    padding: 20px 0;
+    width: 100%;
+    margin: 0;
+  }
+
+  .footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .contact-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+  }
+
+  .fale-conosco,
+  .endereco {
+    flex: 1;
+    padding: 0 20px;
+  }
+
+  .fale-conosco h2,
+  .endereco h2 {
+    font-size: 22px;
+    margin-top: 0;
+  }
+
+  .fale-conosco p,
+  .endereco p {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+
+  .credits {
+    font-size: 16px;
+    text-align: left;
+  }
+    </style>
+</head>
+<body>
+    <!-- Barra de Navegação -->
+    <nav class="nav-bar">
+        <ul>
+            <li><a href="pagina_inicial.html">Home</a></li>
+            <li>
+                <a href="#">Instituto ▼</a>
+                <ul class="submenu">
+                    <li><a href="historias.html">História</a></li>
+                    <li><a href="https://institutos.ufrrj.br/ice/instituto/estrutura/">Estrutura</a></li>
+                    <li><a href="https://institutos.ufrrj.br/ice/instituto/administracao/">Administração</a></li>
+                    <li><a href="https://institutos.ufrrj.br/ice/instituto/localizacao/">Localização</a></li>
+                    <li><a href="https://institutos.ufrrj.br/ice/instituto/ice-em-fotos/">ICE em Fotos</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Graduação ▼</a>
+                <ul class="submenu">
+                    <li><a href="https://institutos.ufrrj.br/ice/departamentos/defis/grade-curricular/">Fisica</a></li>
+                    <li><a href="https://institutos.ufrrj.br/ice/departamentos/demat/grade-curricular/">Matemática</a></li>
+                    <li><a href="https://institutos.ufrrj.br/ice/departamentos/dequim/curso/">Sistemas de Informação</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Pós-Graduação ▼</a>
+                    <ul class="submenu">
+                        <li><a href="https://institutos.ufrrj.br/ice/ppgq/">PPGQ</a></li>
+                        <li><a href="https://institutos.ufrrj.br/ice/ppgmmc-2/">PPGMMC</a></li>
+                        <li><a href="https://institutos.ufrrj.br/ice/profmat/">PROFMAT</a></li>
+                        <li><a href="#">PROFQUI</a></li>
+                    </ul>
+            </li>
+            <li>
+                <a href="#">Orientação ▼</a>
+                    <ul class="submenu">    
+                        <li><a href="https://institutos.ufrrj.br/ice/deliberacoes/">Deliberações</a></li>
+                        <li><a href="https://institutos.ufrrj.br/ice/estatuto-e-regimento/">Estatuto</a></li>
+                    </ul>
+            </li>
+            <a href="#">Fale Conosco</a>
+        </ul>
+    </nav>
+    <main>
+    <!-- Título principal com barra de pesquisa -->
+    <div class="header" div style="display: flex; ; justify-content: left ; width: 100%; background-color: #ececec; height: 159px;">
+        <a href="site2.html">
+        Instituto de Ciências Exatas - ICE </br>
+        Campus Seropédica - UFRRJ </br>
+        </a>
+    </div>
+    <div class="search-bar" style="margin-left: 35%;">
+        <input type="text" placeholder="Pesquisar...">
+        <button type="button">🔍︎</button>
+    </div>
+
+     <!-- Carrossel -->
+     <section class="carousel">
+        <img src="https://institutos.ufrrj.br/ice/wp-content/uploads/sites/2/2014/06/Jardim_PQ_05-1135x296.jpg" alt="Imagem do Campus">
+    </section>
+
+   <!-- Conteúdo principal -->
+   <div class="content">
+    <div class="card-container">
+        <div class="card">
+            <a href="https://institutos.ufrrj.br/ice/eleicoes-no-ice/">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUZkxkivCScpNqzP-VaDU3yrRpossEGsu3NID6mUWPMOc-OC7ULFvfOEgKaXbudiwW-1s&usqp=CAU" alt="Imagem Eleição">
+                Eleição no ICE - 2016-2020
+            </a>
+            <p>Eleição Direta para Diretor e Vice-Diretor do Instituto de Ciências Exatas.</p>
+        </div>
+        <div class="card">
+            <a href="https://institutos.ufrrj.br/ice/normas-de-solicitacao-de-diarias-e-passagens/">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUZkxkivCScpNqzP-VaDU3yrRpossEGsu3NID6mUWPMOc-OC7ULFvfOEgKaXbudiwW-1s&usqp=CAU" alt="Imagem Normas">
+                Normas de Solicitação de Diárias e Passagens
+            </a>
+            <p>Normas para solicitação de diárias e passagens.</p>
+        </div>
+        <div class="card">
+            <a href="https://institutos.ufrrj.br/ice/projetos-aprovados-no-dequim/">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUZkxkivCScpNqzP-VaDU3yrRpossEGsu3NID6mUWPMOc-OC7ULFvfOEgKaXbudiwW-1s&usqp=CAU" alt="Imagem Projetos">
+                Projetos Aprovados no DEQUIM
+            </a>
+            <p>Programa de Pós-Graduação em Química.</p>
+        </div>
+        
+    </div>
+
+     <!-- Editais -->
+     <div class="editais">
+        <hr>
+        <a href="https://institutos.ufrrj.br/ice/editais"><h3>Editais</h3></a>
+        <ul class="edital-list">
+            <li><a href="https://institutos.ufrrj.br/ice/a-prova/">28/02/2011 - 12:34 - A Prova</a></li>
+            <li><a href="https://institutos.ufrrj.br/ice/casos-especiais/">28/02/2011 - 12:33 - Casos Especiais</a></li>
+            <li><a href="https://institutos.ufrrj.br/ice/conceito-i/">28/02/2011 - 12:33 - Conceito I</a></li>
+        </ul>
+    </div>
+</div>
+
+<!-- Rodapé -->
+<footer>
+    <div class="footer-content">
+      <div class="contact-info">
+        <div class="fale-conosco">
+          <h2>Fale Conosco</h2>
+          <p>Contato</p>
+        </div>
+        <div class="endereco">
+          <h2>Endereço</h2>
+          <p>Universidade Federal Rural do Rio de Janeiro</p>
+          <p>BR-465, Km 7 Seropédica-Rio de Janeiro</p>
+          <p>CEP: 23.897-000</p>
+        </div>
+      </div>
+      <div class="credits">
+        © 2011-2024 - UFRRJ | Créditos
+      </div>
+    </div>
+  </footer>
+    </main>
+</body>
+</html>
